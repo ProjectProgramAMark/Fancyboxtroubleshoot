@@ -1,7 +1,7 @@
 extends ../layouts/default
 
 block css
-	link(rel="stylesheet", href="/js/lib/fancybox/jquery.fancybox.css")
+	link(rel="stylesheet", href="lib/fancybox/source/jquery.fancybox.css")
 				
 block content
 	.page-header
@@ -26,7 +26,7 @@ block content
 
 
 block page-js
-	script(src="/js/lib/fancybox/jquery.fancybox.pack.js")
+	script(src="lib/fancybox/source/jquery.fancybox.pack.js")
 	script.
 		jQuery(function($) {
 			$('.gallery-image').fancybox({
