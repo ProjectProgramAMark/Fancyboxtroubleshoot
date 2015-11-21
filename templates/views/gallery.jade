@@ -1,8 +1,8 @@
 extends ../layouts/default
 
 block css
-	link(rel="stylesheet", href="lib/fancybox/source/jquery.fancybox.css")
-				
+	link(rel="stylesheet", href="js/fancybox/source/jquery.fancybox.css")
+
 block content
 	.page-header
 		a(href='/keystone/galleries?new').btn.btn-default.pull-right= user ? 'Add Album' : 'Sign in to Add Album'
@@ -25,8 +25,8 @@ block content
 			h3(style="margin-bottom:0;margin-top:0;") There are no albums yet.
 
 
-block page-js
-	script(src="lib/fancybox/source/jquery.fancybox.pack.js")
+block js
+	script(src="js/fancybox/source/jquery.fancybox.pack.js")
 	script.
 		jQuery(function($) {
 			$('.gallery-image').fancybox({

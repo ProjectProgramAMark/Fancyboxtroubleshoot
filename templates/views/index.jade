@@ -1,14 +1,17 @@
 extends ../layouts/default
+block css
+	link(rel="stylesheet", href="js/FlipClock-master/src/flipclock/css/flipclock.css")
 
 block content
 	.container: .jumbotron
 		img(src='/images/logo.svg', width='160')
 		h1 Welcome
-		p This is your new <a href='http://keystonejs.com' target='_blank'>KeystoneJS</a> website.
-		p It includes the latest versions of
-			| <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
-			| and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
-		p Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.
+		//- p This is your new <a href='http://keystonejs.com' target='_blank'>KeystoneJS</a> website.
+		//- p It includes the latest versions of
+		//- 	| <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
+		//- 	| and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
+		//- p Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.
+		div.my-clock
 		hr
 		if user && user.canAccessKeystone
 			p
@@ -21,3 +24,10 @@ block content
 		hr
 		p Remember to <a href='https://github.com/keystonejs/keystone' target='_blank'>Star KeystoneJS on GitHub</a> and
 			| <a href='https://twitter.com/keystonejs' target='_blank'>follow @keystonejs</a> on twitter for updates.
+
+block js
+	script(src="js/FlipClock-master/compiled/flipclock.min.js")
+	script.
+		var flipClock = new FlipClock($('.my-clock'), {
+			'clockFace' : 'HourlyClock',
+		});
